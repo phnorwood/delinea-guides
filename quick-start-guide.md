@@ -163,66 +163,72 @@ Root
 
 ## Installing Core Components
 
-### Step 1: Create a Site
+### Step 1: Create a Site + Install Platform Engine
 
+**On your designated Windows Server:**
 1. Navigate to **Settings → Engine Management**
 2. Click **Create Site**
    - Site Name: `Primary-DataCenter` (or your preferred name)
    - Description: `Primary on-premises location`
 3. Click **Save**
-
-### Step 2: Install Platform Engine with Workloads
-
-**On your designated Windows Server:**
-
-1. In the Delinea Platform, navigate to **Settings → Engine Management**
-2. Click on your site name
-3. Click **Engines → Add Engine**
-4. Select:
+4. In the Delinea Platform, navigate to **Settings → Engine Management**
+5. Click on your site name
+6. Click **Engines → Add Engine**
+7. Select:
    - Operating system: **Windows**
    - Capabilities:
-     - ☑ Privileged Remote Access (PRA)
-     - ☑ ITP For Active Directory
-     - ☑ PCCE For Active Directory
-5. Click **Generate Script**
-6. Click **Copy PowerShell Script**
-7. On the Windows Server:
+     - ☑ Active Directory Rapid Discovery
+     - ☑ Audit Collector
+     - ☑ ITP For Active directory
+     - ☑ Privilege Control for Servers
+     - ☑ Privileged Remote Access
+8. Click **Generate Script**
+9. Click **Copy PowerShell Script**
+10. On the Windows Server:
    - Right-click PowerShell icon → **Run as Administrator**
    - Paste the script
    - Press Enter
-8. Wait for installation to complete (5-10 minutes)
-9. Verify installation:
+11. Wait for installation to complete (~5 minutes)
+12. Verify installation:
    - Return to **Settings → Engine Management → [Your Site] → Engines**
    - Your server should appear with status: **Active**
 
-### Step 3: Install Distributed Engine
+### Step 2: Create a Site + Install Distributed Engine
 
 **On the same or different Windows Server:**
 
 1. Navigate to **Settings → Administration**
 2. Search for **Distributed Engine**
-3. Click **Add Engine**
-4. Under **Download engine**:
+3. Click **Create Site**
+   - Site Name: `Primary-DataCenter` (or your preferred name)
+   - ☑ Active
+   - Description: `Primary on-premises location`
+   - Site Connector: `(Default)`
+   - Engine Callback Interval: `300` (Default)
+4. Click **Add Site**
+5. Return to **Settings → Administration** → **Distributed Engine**
+6. Click **Add Engine**
+7. Under **Download engine**:
    - Processor architecture: **64-bit**
-   - Preconfigured site: **Any site**
-5. Click **Download now**
-6. On the Windows Server:
+   - Preconfigured site: **Any site** (or your preferred site)
+8. Click **Download now**
+9. On the Windows Server:
    - Extract the ZIP file
    - Right-click `setup.exe` → **Run as Administrator**
    - Follow installation wizard
-7. Assign to site:
-   - Return to **Settings → Distributed Engine**
-   - Select the newly installed engine
-   - Click **Assign and Activate Selected Engines**
-   - Select your site
-   - Click **Activate**
-8. Enable automatic updates:
-   - Click **Configuration**
-   - Click **Edit** next to **Engine settings**
-   - Enable **Always Update Distributed Engines**
-   - Click **Save**
+10. Assign to site:
+    - Return to **Settings → Administration** → **Distributed Engine**
+    - Select the newly installed engine
+    - Select **Assign and Activate Selected Engines** from the dropdown menu
+    - Select your site from the dropdown menu
+    - Click **Activate**
+11. Enable automatic updates:
+    - Click **Configuration**
+    - Click **Edit** next to **Engine settings**
+    - Enable **Always Update Distributed Engines**
+    - Click **Save**
 
-### Step 4: Install Delinea Connector
+### Step 3: Install Delinea Connector
 
 **On a domain-joined Windows Server (can be same as Platform Engine):**
 
