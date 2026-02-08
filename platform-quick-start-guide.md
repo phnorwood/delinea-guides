@@ -227,6 +227,11 @@ Root
     - Click **Edit** next to **Engine settings**
     - Enable **Always Update Distributed Engines**
     - Click **Save**
+12. Verify installation:
+   - Return to **Settings → Administration** → **Distributed Engine**
+   - Expand [Your Site] where engine was installed
+   - Your engine should appear with connection status and activation status: **Online**
+   
 
 ### Step 3: Install Delinea Connector
 
