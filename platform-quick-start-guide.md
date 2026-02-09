@@ -1,6 +1,8 @@
 # Delinea Platform Deployment Guide
 
-**Quick Start Guide for IT Administrators**
+**Quick Start Guide for Basic Environments e.g. POC, Non-Production**
+
+This guide is not definitive, and not recommended for production environments.
 
 ---
 
