@@ -81,19 +81,13 @@
 ### 3.2: Configure Security Settings
 
 1. With the secret open, click the **Security** tab
-2. Click Edit next to Approval
+2. Click **Edit** next to **Approval**
 3. Configure the following settings:
    - **Approval Type:** `Approval Always Required`
    - **Approval Workflow:** `AWS Account - Dual Approval`
 4. Click **Save**
 5. Scroll to **Other Security**
-6. Click **Edit** next to **Emergency Access**
-7. Configure:
-   - **☑ Enable emergency access**
-   - **Emergency access approvers:** Select `System Administrator` group
-   - **Emergency reason required:** ☑ Yes
-   - **Emergency access duration:** `1 hour`
-8. Click **Save**
+6. Edit **Session recording enabled:** Yes
 
 ---
 
