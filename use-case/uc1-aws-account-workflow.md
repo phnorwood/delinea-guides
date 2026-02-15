@@ -33,29 +33,9 @@
 
 ---
 
-## Step 2: Create Secret Template for AWS Accounts (Optional)
+## Step 2: Create Approval Workflow for Dual Authorization
 
-*Skip this step if using the built-in "AWS IAM Console Account" or "Web Password" template*
-
-1. Navigate to **Settings → Administration**
-2. Search for and click **Secret Templates**
-3. Click **Create Template**
-4. Configure:
-   - **Template Name:** `AWS Root Account`
-   - **Base Template:** Select **Web Password**
-5. Click **Configure**
-6. Add custom fields (if needed):
-   - Click **Add Field**
-   - Field name: `Account ID`
-   - Field type: Text
-   - Click **Save**
-7. Click **Save Template**
-
----
-
-## Step 3: Create Approval Workflow for Dual Authorization
-
-### 3.1: Create Approver Group
+### 2.1: Create Approver Group
 
 1. Navigate to **Access → Groups**
 2. Click **Create Group**
@@ -67,10 +47,10 @@
 6. Search for and select at least 2 users who will serve as approvers
 7. Click **Add**
 
-### 3.2: Create Approval Workflow
+### 2.2: Create Approval Workflow
 
 1. Navigate to **Settings → Administration**
-2. Search for and click **Approval Workflows**
+2. Search for and click **Workflows**
 3. Click **Create Workflow**
 4. Configure:
    - **Workflow Name:** `AWS Root Account - Dual Approval`
@@ -94,9 +74,9 @@
 
 ---
 
-## Step 4: Store AWS Root Account Credentials
+## Step 3: Store AWS Root Account Credentials
 
-### 4.1: Create the Secret
+### 3.1: Create the Secret
 
 1. Navigate to **Secret Server → All Secrets**
 2. Navigate to folder: `AWS → Root Accounts`
@@ -111,7 +91,7 @@
    - **Notes:** Add account ID and purpose (e.g., "Production AWS root account")
 6. Click **Create Secret**
 
-### 4.2: Configure Security Settings
+### 3.2: Configure Security Settings
 
 1. With the secret open, click the **Security** tab
 2. Click **Edit**
@@ -125,7 +105,7 @@
    - **Maximum access duration:** `4 hours`
 5. Click **Save**
 
-### 4.3: Enable Break-Glass Access
+### 3.3: Enable Break-Glass Access
 
 1. Still in the **Security** tab, scroll to **Advanced Settings**
 2. Click **Edit** next to **Emergency Access**
@@ -138,7 +118,7 @@
 
 ---
 
-## Step 5: Configure Session Recording Settings
+## Step 4: Configure Session Recording Settings
 
 1. Navigate to **Settings → Administration**
 2. Search for and click **Session Recording**
@@ -152,9 +132,9 @@
 
 ---
 
-## Step 6: Set Up Privileged Remote Access for Web Console
+## Step 5: Set Up Privileged Remote Access for Web Console
 
-### 6.1: Configure Secret Launcher
+### 5.1: Configure Secret Launcher
 
 1. Return to your AWS secret: `AWS Root - [Account-ID]`
 2. Click **Settings** tab
@@ -166,7 +146,7 @@
    - **Launch URL:** Verify `https://console.aws.amazon.com` is populated
 6. Click **Save**
 
-### 6.2: Set Launcher as Preferred Access Method
+### 5.2: Set Launcher as Preferred Access Method
 
 1. Still in **Settings** tab
 2. Scroll to **General**
@@ -176,9 +156,9 @@
 
 ---
 
-## Step 7: Test Dual Approval Workflow
+## Step 6: Test Dual Approval Workflow
 
-### 7.1: Request Access (as regular user)
+### 6.1: Request Access (as regular user)
 
 1. Log out of cloudadmin account
 2. Log in as a regular user (not an approver)
@@ -192,7 +172,7 @@
 8. Click **Submit Request**
 9. Note: You should see "Access request pending approval"
 
-### 7.2: Approve Request (as first approver)
+### 6.2: Approve Request (as first approver)
 
 1. Open a separate browser (or incognito window)
 2. Log in as first approver
@@ -208,7 +188,7 @@
 9. Add comment: "First approval granted"
 10. Click **Submit**
 
-### 7.3: Approve Request (as second approver)
+### 6.3: Approve Request (as second approver)
 
 1. Open another browser (or incognito window)
 2. Log in as second approver
@@ -220,7 +200,7 @@
 8. Add comment: "Second approval granted"
 9. Click **Submit**
 
-### 7.4: Access the Secret
+### 6.4: Access the Secret
 
 1. Return to the requester's browser session
 2. Refresh the secret page
@@ -232,9 +212,9 @@
 
 ---
 
-## Step 8: Verify Audit Trail
+## Step 7: Verify Audit Trail
 
-### 8.1: Check Access Logs
+### 7.1: Check Access Logs
 
 1. As Platform administrator, navigate to **Insights → Reports**
 2. Run report: **Secret Access Audit**
@@ -248,7 +228,7 @@
    - Secret accessed by [user]
    - Launcher opened by [user]
 
-### 8.2: Review Session Recording
+### 7.2: Review Session Recording
 
 1. Navigate to **Insights → Session Review**
 2. Find the recent session for AWS console access
@@ -265,7 +245,7 @@
    - Keystrokes are captured (if enabled)
 7. Close video player
 
-### 8.3: Export Audit Report
+### 7.3: Export Audit Report
 
 1. Navigate to **Insights → Reports**
 2. Select report: **Secret Access Audit**
@@ -275,9 +255,9 @@
 
 ---
 
-## Step 9: Document Break-Glass Emergency Access
+## Step 8: Document Break-Glass Emergency Access
 
-### 9.1: Test Emergency Access (Optional)
+### 8.1: Test Emergency Access (Optional)
 
 1. Log in as System Administrator
 2. Navigate to secret: `AWS Root - [Account-ID]`
@@ -287,7 +267,7 @@
 6. Access should be granted immediately (bypassing normal approval)
 7. Note: Emergency access is fully logged with reason
 
-### 9.2: Create Break-Glass Documentation
+### 8.2: Create Break-Glass Documentation
 
 Document the following for your organization:
 
@@ -313,7 +293,7 @@ Document the following for your organization:
 
 ---
 
-## Step 10: Repeat for Additional AWS Accounts
+## Step 9: Repeat for Additional AWS Accounts
 
 For AWS IAM admin accounts (not root), follow the same process with these modifications:
 
