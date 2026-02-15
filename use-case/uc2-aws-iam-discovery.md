@@ -132,8 +132,8 @@
 
 1. Navigate to **Discovery → Network View**
 2. Select Toggle Panel icon to the left of Search bar
-2. Filter by source: `AWS IAM Users - [Account-Name]`
-3. Review discovered items
+3. Filter by source: `AWS IAM Users - [Account-Name]`
+4. Review discovered items
 
 ---
 
@@ -199,9 +199,9 @@
 
 ---
 
-## Step 8: Test Discovered Credentials
+## Step 7: Test Discovered Credentials
 
-### 8.1: Verify IAM User Secret
+### 7.1: Verify IAM User Secret
 
 1. Navigate to one of the imported IAM user secrets
 2. Click **Overview** tab
@@ -212,7 +212,7 @@
    - Enter password from secret
    - Verify successful authentication (or verify password needs reset if not imported)
 
-### 8.2: Verify Access Key Secret
+### 7.2: Verify Access Key Secret
 
 1. Navigate to one of the imported access key secrets
 2. Click **Overview** tab
