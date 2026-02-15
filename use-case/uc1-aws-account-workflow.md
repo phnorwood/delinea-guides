@@ -12,7 +12,21 @@
 
 ---
 
-## Step 1: Create Folder Structure for AWS Accounts
+## Step 1: Configure Session Recording Settings
+
+1. Navigate to **Settings → Administration**
+2. Search for and click **Session Recording**
+3. Click **Edit**
+4. Verify settings:
+   - **☑ Enable session recording**
+   - **☑ Record keystrokes**
+   - **☑ Store videos** (keep default: Database)
+   - **Video codec:** H.264/MP4
+5. Click **Save**
+
+---
+
+## Step 2: Create Folder Structure for AWS Accounts
 
 1. Log in to your Delinea Platform: `https://[your-tenant].delinea.app`
 2. Navigate to **Secret Server** from the left menu
@@ -25,7 +39,7 @@
 
 ---
 
-## Step 2: Create Approval Workflow for Dual Authorization
+## Step 3: Create Approval Workflow for Dual Authorization
 
 ### 2.1: Create Approver Group
 
@@ -60,7 +74,7 @@
 
 ---
 
-## Step 3: Store AWS Account Credentials
+## Step 4: Store AWS Account Credentials
 
 ### 3.1: Create the Secret
 
@@ -85,7 +99,7 @@
    - **Approval Type:** `Approval Always Required`
    - **Approval Workflow:** `AWS Account - Dual Approval`
 4. Click **Save**
-5. Still in the **Security** tab, scroll to **Advanced Settings**
+5. Scroll to **Other Security**
 6. Click **Edit** next to **Emergency Access**
 7. Configure:
    - **☑ Enable emergency access**
@@ -93,20 +107,6 @@
    - **Emergency reason required:** ☑ Yes
    - **Emergency access duration:** `1 hour`
 8. Click **Save**
-
----
-
-## Step 4: Configure Session Recording Settings
-
-1. Navigate to **Settings → Administration**
-2. Search for and click **Session Recording**
-3. Click **Edit**
-4. Verify settings:
-   - **☑ Enable session recording**
-   - **☑ Record keystrokes**
-   - **☑ Store videos** (keep default: Database)
-   - **Video codec:** H.264/MP4
-5. Click **Save**
 
 ---
 
