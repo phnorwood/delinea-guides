@@ -6,9 +6,8 @@
 - Delinea Platform tenant configured, including admin. access
 - Platform Engine(s),  Distributed Engine(s) installed and active
 - Session Recording  enabled
-- Privileged Remote Acccess (PRA) enabled
 - AWS account credentials available
-- At least two Platform users for dual approval workflow
+- At least two (2) Platform users for dual approval workflow
 
 **Estimated Time:** 30-45 minutes
 
@@ -140,11 +139,10 @@
 
 1. Return to the requester's browser session
 2. Refresh the secret page
-3. You should now see **Open with Remote Access** button
-4. Click **Open with Remote Access**
-5. Verify: A new browser tab opens with PRA session to AWS console
-6. The credentials should auto-fill (if using Web Password Filler)
-7. Log in to AWS console
+3. Click **Web Password Filler** button
+4. Verify: A new browser tab opens with PRA session to AWS console
+5. The credentials should auto-fill (if using Web Password Filler)
+6. Log in to AWS console
 
 ---
 
@@ -152,12 +150,9 @@
 
 ### 5.1: Check Access Logs
 
-1. As Platform administrator, navigate to **Insights → Reports**
-2. Run report: **Secret Access Audit**
-3. Filter by:
-   - Secret name: `AWS - [Account-ID]`
-   - Date range: Today
-4. Verify the following events appear:
+1. As Platform administrator, navigate to **Insights → Secret Server Reporting**
+2. Run report: **Secret Activity Today**
+3. Verify the following events appear:
    - Access requested by [user]
    - Approved by [first approver]
    - Approved by [second approver]
@@ -172,71 +167,10 @@
 4. Verify:
    - **User:** Shows requester username
    - **Secret:** Shows `AWS - [Account-ID]`
-   - **Duration:** Shows session length
-   - **Status:** Completed
 5. Click **Play** to review video recording
 6. Verify:
    - Login screen is visible
    - Actions in AWS console are recorded
-   - Keystrokes are captured (if enabled)
-7. Close video player
-
-### 5.3: Export Audit Report
-
-1. Navigate to **Insights → Reports**
-2. Select report: **Secret Access Audit**
-3. Click **Export**
-4. Select format: **PDF** or **CSV**
-5. Save file for compliance documentation
-
----
-
-## Step 6: Document Break-Glass Emergency Access
-
-### 6.1: Test Emergency Access (Optional)
-
-1. Log in as System Administrator
-2. Navigate to secret: `AWS - [Account-ID]`
-3. Click **Request Emergency Access**
-4. Provide emergency reason: "Testing break-glass procedure"
-5. Click **Submit**
-6. Access should be granted immediately (bypassing normal approval)
-7. Note: Emergency access is fully logged with reason
-
-### 6.2: Create Break-Glass Documentation
-
-Document the following for your organization:
-
-**Emergency Access Contacts:**
-- Primary: [Name, Email, Phone]
-- Secondary: [Name, Email, Phone]
-
-**Break-Glass Procedure:**
-1. Log in to Delinea Platform as System Administrator
-2. Navigate to AWS account secret
-3. Click "Request Emergency Access"
-4. Provide detailed reason for emergency access
-5. Access will be granted for 1 hour
-6. Complete emergency task
-7. Document all actions taken in incident report
-8. Report emergency access usage to security team within 4 hours
-
-**Post-Emergency Actions:**
-- Review session recording
-- Document all changes made in AWS
-- Update change management system
-- Rotate account password if compromised
-
----
-
-## Step 7: Repeat for Additional AWS Accounts
-
-For additional AWS accounts, follow the same process:
-
-1. Store in folder: `AWS`
-2. Secret name format: `AWS - [Account-ID]` or `AWS - [Username] - [Account-ID]`
-3. Use same dual approval workflow
-4. Adjust approval requirements based on your organization's security policies (optional)
 
 ---
 
