@@ -5,6 +5,7 @@
 **Prerequisites:**
 - Delinea Platform tenant configured with admin access
 - Platform Engine and Distributed Engine installed and active
+- Session Recording is enabled
 - AWS account credentials available
 - At least two Platform users for dual approval workflow
 
@@ -12,21 +13,7 @@
 
 ---
 
-## Step 1: Configure Session Recording Settings
-
-1. Navigate to **Settings → Administration**
-2. Search for and click **Session Recording**
-3. Click **Edit**
-4. Verify settings:
-   - **☑ Enable session recording**
-   - **☑ Record keystrokes**
-   - **☑ Store videos** (keep default: Database)
-   - **Video codec:** H.264/MP4
-5. Click **Save**
-
----
-
-## Step 2: Create Folder Structure for AWS Accounts
+## Step 1: Create Folder Structure for AWS Accounts
 
 1. Log in to your Delinea Platform: `https://[your-tenant].delinea.app`
 2. Navigate to **Secret Server** from the left menu
@@ -39,7 +26,7 @@
 
 ---
 
-## Step 3: Create Approval Workflow for Dual Authorization
+## Step 2: Create Approval Workflow for Dual Authorization
 
 ### 2.1: Create Approver Group
 
@@ -74,7 +61,7 @@
 
 ---
 
-## Step 4: Store AWS Account Credentials
+## Step 3: Store AWS Account Credentials
 
 ### 3.1: Create the Secret
 
@@ -110,7 +97,7 @@
 
 ---
 
-## Step 5: Set Up Privileged Remote Access for Web Console
+## Step 4: Set Up Privileged Remote Access for Web Console
 
 ### 5.1: Configure Secret Launcher
 
@@ -134,7 +121,7 @@
 
 ---
 
-## Step 6: Test Dual Approval Workflow
+## Step 5: Test Dual Approval Workflow
 
 ### 6.1: Request Access (as regular user)
 
@@ -190,7 +177,7 @@
 
 ---
 
-## Step 7: Verify Audit Trail
+## Step 6: Verify Audit Trail
 
 ### 7.1: Check Access Logs
 
@@ -233,7 +220,7 @@
 
 ---
 
-## Step 8: Document Break-Glass Emergency Access
+## Step 7: Document Break-Glass Emergency Access
 
 ### 8.1: Test Emergency Access (Optional)
 
@@ -271,7 +258,7 @@ Document the following for your organization:
 
 ---
 
-## Step 9: Repeat for Additional AWS Accounts
+## Step 8: Repeat for Additional AWS Accounts
 
 For additional AWS accounts, follow the same process:
 
