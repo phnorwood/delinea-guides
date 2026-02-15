@@ -3,9 +3,10 @@
 **Objective:** Securely store AWS accounts in the Delinea Platform with dual approval for access and complete audit trails for break-glass scenarios.
 
 **Prerequisites:**
-- Delinea Platform tenant configured with admin access
-- Platform Engine and Distributed Engine installed and active
-- Session Recording is enabled
+- Delinea Platform tenant configured, including admin. access
+- Platform Engine(s),  Distributed Engine(s) installed and active
+- Session Recording  enabled
+- Privileged Remote Acccess (PRA) enabled
 - AWS account credentials available
 - At least two Platform users for dual approval workflow
 
@@ -87,37 +88,13 @@
    - **Approval Workflow:** `AWS Account - Dual Approval`
 4. Click **Save**
 5. Scroll to **Other Security**
-6. Edit **Session recording enabled:** Yes
+6. **Session recording enabled:** `Yes`
 
 ---
 
-## Step 4: Set Up Privileged Remote Access for Web Console
+## Step 4: Test Dual Approval Workflow
 
-### 5.1: Configure Secret Launcher
-
-1. Return to your AWS secret: `AWS - [Account-ID]`
-2. Click **Settings** tab
-3. Find **Web Launcher** section
-4. Click **Edit**
-5. Configure:
-   - **☑ Enable launcher**
-   - **Launcher Type:** Web browser
-   - **Launch URL:** Verify `https://console.aws.amazon.com` is populated
-6. Click **Save**
-
-### 5.2: Set Launcher as Preferred Access Method
-
-1. Still in **Settings** tab
-2. Scroll to **General**
-3. Click **Edit**
-4. Set **Default launcher:** `Web Browser`
-5. Click **Save**
-
----
-
-## Step 5: Test Dual Approval Workflow
-
-### 6.1: Request Access (as regular user)
+### 4.1: Request Access (as regular user)
 
 1. Log out of cloudadmin account
 2. Log in as a regular user (not an approver)
@@ -131,7 +108,7 @@
 8. Click **Submit Request**
 9. Note: You should see "Access request pending approval"
 
-### 6.2: Approve Request (as first approver)
+### 4.2: Approve Request (as first approver)
 
 1. Open a separate browser (or incognito window)
 2. Log in as first approver
@@ -147,7 +124,7 @@
 9. Add comment: "First approval granted"
 10. Click **Submit**
 
-### 6.3: Approve Request (as second approver)
+### 4.3: Approve Request (as second approver)
 
 1. Open another browser (or incognito window)
 2. Log in as second approver
@@ -159,7 +136,7 @@
 8. Add comment: "Second approval granted"
 9. Click **Submit**
 
-### 6.4: Access the Secret
+### 4.4: Access the Secret
 
 1. Return to the requester's browser session
 2. Refresh the secret page
@@ -171,9 +148,9 @@
 
 ---
 
-## Step 6: Verify Audit Trail
+## Step 5: Verify Audit Trail
 
-### 7.1: Check Access Logs
+### 5.1: Check Access Logs
 
 1. As Platform administrator, navigate to **Insights → Reports**
 2. Run report: **Secret Access Audit**
@@ -187,7 +164,7 @@
    - Secret accessed by [user]
    - Launcher opened by [user]
 
-### 7.2: Review Session Recording
+### 5.2: Review Session Recording
 
 1. Navigate to **Insights → Session Review**
 2. Find the recent session for AWS console access
@@ -204,7 +181,7 @@
    - Keystrokes are captured (if enabled)
 7. Close video player
 
-### 7.3: Export Audit Report
+### 5.3: Export Audit Report
 
 1. Navigate to **Insights → Reports**
 2. Select report: **Secret Access Audit**
@@ -214,9 +191,9 @@
 
 ---
 
-## Step 7: Document Break-Glass Emergency Access
+## Step 6: Document Break-Glass Emergency Access
 
-### 8.1: Test Emergency Access (Optional)
+### 6.1: Test Emergency Access (Optional)
 
 1. Log in as System Administrator
 2. Navigate to secret: `AWS - [Account-ID]`
@@ -226,7 +203,7 @@
 6. Access should be granted immediately (bypassing normal approval)
 7. Note: Emergency access is fully logged with reason
 
-### 8.2: Create Break-Glass Documentation
+### 6.2: Create Break-Glass Documentation
 
 Document the following for your organization:
 
@@ -252,7 +229,7 @@ Document the following for your organization:
 
 ---
 
-## Step 8: Repeat for Additional AWS Accounts
+## Step 7: Repeat for Additional AWS Accounts
 
 For additional AWS accounts, follow the same process:
 
