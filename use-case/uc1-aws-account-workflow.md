@@ -45,24 +45,18 @@
 2. Search for and click **Workflows**
 3. Click **Create Workflow**
 4. Configure:
+   - **Workflow Type:** Access request
    - **Workflow Name:** `AWS Account - Dual Approval`
    - **Description:** `Requires two approvals for AWS account access`
+   - **State:** Select Enabled
 5. Click **Next**
 6. Under **Approval Steps**, click **Add Step**
 7. Configure Step 1:
    - **Step Name:** `First Approval`
    - **Approvers:** Select group `AWS Account Approvers`
-   - **Required Approvals:** `1`
-   - **Approval Duration:** `4 hours` (or your requirement)
-8. Click **Add**
-9. Click **Add Step** again for second approval
-10. Configure Step 2:
-    - **Step Name:** `Second Approval`
-    - **Approvers:** Select group `AWS Account Approvers`
-    - **Required Approvals:** `1`
-    - **Approval Duration:** `4 hours`
-11. Click **Add**
-12. Click **Save**
+   - **Required Approvals:** `2`
+   - **If Approved:** Approve the request
+8. Click **Save**
 
 ---
 
