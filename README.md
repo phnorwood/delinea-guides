@@ -8,6 +8,10 @@ Delinea's platform is powerful — but getting up and running shouldn't require 
 
 Each guide is designed to be followed start to finish in a single session, with prerequisites listed upfront and every action made explicit.
 
+### Warning
+
+Please consider this content to be best-effort, and refer to product documentation for the most up-to-date guidance and information.
+
 ## Guides
 
 | Guide | Description |
