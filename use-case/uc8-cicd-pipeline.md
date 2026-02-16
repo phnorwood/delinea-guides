@@ -1,10 +1,10 @@
-# UC-8: CI/CD Pipeline Integration for Cloud Deployments
+# Use-Case: CI/CD Pipeline Integration for Cloud Deployments
 
 **Objective:** Configure Jenkins or GitLab CI/CD pipeline to retrieve AWS credentials dynamically from the Delinea Platform instead of hardcoding keys. The pipeline authenticates to the Platform using a service account, retrieves AWS keys via REST API, uses them for deployment, and validates that API calls are logged.
 
 **Prerequisites:**
 - Delinea Platform tenant configured with admin access
-- AWS credentials stored in Platform (from UC-1 or UC-2)
+- AWS credentials stored in Platform
 - Jenkins or GitLab CI/CD environment configured
 - Basic understanding of CI/CD pipeline configuration
 - API access enabled on Platform
@@ -516,8 +516,6 @@ This demonstrates the benefit of dynamic retrieval.
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-8:
 
 - ✅ CI/CD service account created in Platform
 - ✅ API token generated for service account

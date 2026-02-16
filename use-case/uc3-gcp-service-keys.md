@@ -1,4 +1,4 @@
-# UC-3: Management of GCP Service Account Keys
+# Use-Case: Management of GCP Service Account Keys
 
 **Objective:** Onboard JSON key files for GCP Service Accounts into the Delinea Platform. Securely store and manage over-privileged service account keys that are often scattered in code and config files, ensuring keys are retrieved through PAM without exposing the underlying JSON.
 
@@ -443,8 +443,6 @@ Provide to development teams:
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-3:
 
 - ✅ GCP service account JSON keys uploaded to Platform vault
 - ✅ Service account keys stored with proper metadata (email, project ID, private key ID)

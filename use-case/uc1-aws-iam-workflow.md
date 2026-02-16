@@ -1,4 +1,4 @@
-# UC-1: Centralized Vault for AWS Accounts
+# Use-Case: Centralized Vault for AWS Accounts
 
 **Objective:** Securely store AWS accounts in the Delinea Platform with dual approval for access and complete audit trails for break-glass scenarios.
 
@@ -175,8 +175,6 @@
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-1:
 
 - ✅ AWS account credentials stored in Platform vault
 - ✅ Dual approval workflow created with two required approvals

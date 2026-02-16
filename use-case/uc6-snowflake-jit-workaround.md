@@ -1,10 +1,10 @@
-# UC-6: Time-Limited Access for Snowflake Privileged Roles
+# Use-Case: Time-Limited Access for Snowflake Privileged Roles
 
 **Objective:** Provide time-bound access to Snowflake SYSADMIN credentials through the Delinea Platform with approval workflows and automatic access expiration. While the Platform does not support automated JIT role elevation for Snowflake, this workflow provides time-limited credential checkout with full audit trails as an alternative approach.
 
 **Prerequisites:**
 - Delinea Platform tenant configured with admin access
-- Snowflake SYSADMIN credentials stored in Platform (from UC-4)
+- Snowflake SYSADMIN credentials stored in Platform
 - At least two users: one requester and one approver
 - Platform Engine with PRA workload active
 
@@ -426,8 +426,6 @@ Document for managers who approve requests:
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-6 (with Platform limitations):
 
 - ✅ Snowflake SYSADMIN credentials configured for time-limited checkout
 - ✅ Check out interval configured (2 hours)

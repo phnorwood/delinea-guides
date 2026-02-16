@@ -1,4 +1,4 @@
-# UC-5: Brokered Web Session to Cloud Consoles
+# Use-Case: Brokered Web Session to Cloud Consoles
 
 **Objective:** Instead of giving an engineer direct credentials to an AWS Admin IAM User, they request access through the Delinea Platform. The Platform launches a browser session via Privileged Remote Access (PRA) to the AWS Management Console without the user ever seeing the password. The entire session is recorded for playback.
 
@@ -422,8 +422,6 @@ Document the following for compliance:
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-5:
 
 - ✅ AWS IAM admin credentials stored in Platform vault
 - ✅ Secret configured with "Hide launcher password" enabled

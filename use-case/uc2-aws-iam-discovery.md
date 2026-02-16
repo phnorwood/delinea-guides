@@ -1,4 +1,4 @@
-# UC-2: Discovery and Onboarding of IAM User Access Keys
+# Use-Case: Discovery and Onboarding of IAM User Access Keys
 
 **Objective:** Use the Delinea Platform's discovery capabilities to automatically find AWS IAM Users and their associated Access Keys, then import these secrets into the vault for centralized management.
 
@@ -230,8 +230,6 @@
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-2:
 
 - ✅ AWS IAM discovery service account created with appropriate permissions
 - ✅ Discovery credentials stored securely in Platform vault

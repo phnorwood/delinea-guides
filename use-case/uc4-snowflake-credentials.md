@@ -1,4 +1,4 @@
-# UC-4: Secure Storage of Snowflake User Passwords & Key Pair Authentication
+# Use-Case: Secure Storage of Snowflake User Passwords & Key Pair Authentication
 
 **Objective:** Vault passwords for Snowflake users with ACCOUNTADMIN or SYSADMIN roles and securely store private keys used for key pair authentication. Check out credentials from the Platform, connect via SnowSQL or web UI, and validate that sessions are recorded and linked to specific users.
 
@@ -481,8 +481,6 @@ GRANT ROLE PASSWORD_ADMIN_ROLE TO USER DELINEA_USER;
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-4:
 
 - ✅ Snowflake ACCOUNTADMIN credentials stored in Platform vault
 - ✅ Snowflake SYSADMIN credentials stored in Platform vault

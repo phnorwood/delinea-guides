@@ -1,10 +1,10 @@
-# UC-11: Comprehensive Audit Trail for Compliance Reporting
+# Use-Case: Comprehensive Audit Trail for Compliance Reporting
 
 **Objective:** Generate reports showing who accessed which cloud account (AWS, GCP, Snowflake), when, from where, and what they did via session recording. Demonstrate the ability to play back recorded console sessions for compliance and audit purposes.
 
 **Prerequisites:**
 - Delinea Platform tenant configured with admin access
-- Cloud credentials stored from UC-1, UC-3, and UC-4
+- Cloud credentials stored in Platform
 - Session recording enabled globally
 - Several recorded sessions available from previous use case testing
 - PRA sessions completed for AWS, GCP, or Snowflake consoles
@@ -444,8 +444,6 @@ A: Not possible - all credentials checked out to specific users, exclusive acces
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-11:
 
 - ✅ Session recording enabled for all cloud platform access
 - ✅ Multiple recorded sessions available (AWS, GCP, Snowflake)

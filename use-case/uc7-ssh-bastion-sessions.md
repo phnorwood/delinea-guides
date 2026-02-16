@@ -1,4 +1,4 @@
-# UC-7: Secure SSH Session to Cloud Bastion Hosts
+# Use-Case: Secure SSH Session to Cloud Bastion Hosts
 
 **Objective:** Onboard SSH key pairs used to access critical bastion/jump hosts in AWS or GCP. Users check out the SSH key from the Platform, and the Platform brokers the SSH session through PRA, recording all commands executed with keystroke logging.
 
@@ -479,8 +479,6 @@ Create documentation for each bastion:
 ---
 
 ## Success Criteria Verification
-
-Verify you have successfully completed UC-7:
 
 - ✅ SSH key pairs for bastion hosts stored in Platform vault
 - ✅ Private keys secured with appropriate access controls
