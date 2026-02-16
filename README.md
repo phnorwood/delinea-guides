@@ -2,7 +2,7 @@
 
 Simple, minimal, and easy-to-follow guides for getting started with Delinea solutions.
 
-*Please refer to product documentation for the most up-to-date guidance and information, as this content is provided with no guarantees or support.*
+*Please refer to product documentation for the most up-to-date guidance and information. This content is provided with no guarantees or support.*
 
 ## About
 
