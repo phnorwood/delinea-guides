@@ -521,5 +521,3 @@ For each import:
 - Update service accounts if needed
 
 ---
-
-**Delinea** | Privileged Access Management Made Simple

@@ -448,8 +448,4 @@ Verify you have successfully completed UC-6 (with Platform limitations):
 - ✅ SQL commands visible in session recording (if keystroke logging enabled)
 - ✅ Security team notified of privileged access usage
 
-**⚠️ Platform Limitation Acknowledged:**
-- ❌ Platform does NOT automatically grant/revoke SYSADMIN role in Snowflake
-- ❌ Platform does NOT integrate with Snowflake RBAC system for role elevation
-- ✅ Workaround provides time-limited credential access with full audit trail
-
+---

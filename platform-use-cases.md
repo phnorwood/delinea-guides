@@ -788,5 +788,3 @@ Apply all recommended controls:
 - Limit shared secret use to necessary scenarios only
 
 ---
-
-**Delinea** | Privileged Access Management Made Simple

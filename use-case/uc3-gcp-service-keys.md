@@ -7,7 +7,7 @@
 - Platform Engine and Distributed Engine installed and active
 - GCP project with service accounts and JSON key files
 - GCP user account with permissions to create service accounts and keys
-- Basic folder structure created (create `/GCP` folder)
+- Basic folder structure created (create `GCP` folder)
 
 **Estimated Time:** 45-60 minutes
 

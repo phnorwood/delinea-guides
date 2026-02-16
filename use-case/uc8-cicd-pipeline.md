@@ -536,7 +536,4 @@ Verify you have successfully completed UC-8:
 - ✅ Alerts configured for API access monitoring
 - ✅ Security team receives notifications of CI/CD API usage
 
-**⚠️ Platform Limitation Acknowledged:**
-- Platform REST API suitable for standard CI/CD frequency
-- For extremely high-velocity scenarios (1000s of requests/min), separate DSV product would be required
-
+---

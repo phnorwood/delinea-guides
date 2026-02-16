@@ -7,7 +7,6 @@
 - Platform Engine and Distributed Engine installed and active
 - AWS account with IAM users and access keys to discover
 - AWS IAM credentials with permissions to read IAM users and keys
-- Completed UC-1 (folder structure for AWS accounts exists)
 
 **Estimated Time:** 45-60 minutes
 
