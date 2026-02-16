@@ -140,7 +140,7 @@ These are permission scope identifiers (not URLs to visit) that must be configur
 
 ---
 
-## MSFT Entra ID
+## Microsoft Entra ID
 
 ### Discovery
 **Application Permissions Required** (must be Application Permissions, NOT Delegated Permissions):
