@@ -38,6 +38,28 @@ This document provides a comprehensive reference of permissions required for **D
 
 ---
 
+## Unix
+
+### Discovery
+**Account Requirements:**
+- SSH access to target systems
+- Read access to `/etc/passwd`
+- `sudo passwd <username>` capability (required for account takeover)
+
+### RPC
+- `passwd` command is used
+- Default local settings apply during password changes
+
+---
+
+## ESXi
+
+### Discovery
+- **Shell Access** permission
+- **Query VRM Policy** permission
+
+---
+
 ## Amazon Web Services (AWS)
 
 ### Discovery
@@ -166,27 +188,5 @@ These are permission scope identifiers (not URLs to visit) that must be configur
 
 **Required Role:**
 - **Reader** role on subscriptions for CIEM functionality
-
----
-
-## Unix
-
-### Discovery
-**Account Requirements:**
-- SSH access to target systems
-- Read access to `/etc/passwd`
-- `sudo passwd <username>` capability (required for account takeover)
-
-### RPC
-- `passwd` command is used
-- Default local settings apply during password changes
-
----
-
-## ESXi
-
-### Discovery
-- **Shell Access** permission
-- **Query VRM Policy** permission
 
 ---
