@@ -2,13 +2,13 @@
 
 Simple, minimal, and easy-to-follow guides for getting started with Delinea solutions.
 
+*Please refer to product documentation for the most up-to-date guidance and information, as this content is provided with no guarantees or support. PRs welcomed.*
+
 ## About
 
 Delinea's platform is powerful — but getting up and running shouldn't require sifting through dense documentation. These guides cut through the noise and give IT administrators a clear, step-by-step path from zero to functional deployment. No fluff, no detours — just what you need to know, in the order you need to know it.
 
 Each guide is designed to be followed start to finish in a single session, with prerequisites listed upfront and every action made explicit.
-
-***Warning*** Please refer to product documentation for the most up-to-date guidance and information, as this content is provided with no guarantees or support. PRs welcomed.
 
 ## Guides
 
