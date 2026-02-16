@@ -8,14 +8,6 @@ This document provides a comprehensive reference of permissions required for **D
 
 ### Discovery
 
-**What Discovery Scans:**
-- Organizational Units (OUs) and Windows computers on the domain
-- Domain Accounts (AD user accounts)
-- Local Accounts (Local Windows accounts on each machine)
-- IIS Application Pools (running as AD accounts)
-- Windows Services (running as AD accounts)
-- Scheduled Tasks (running as AD accounts)
-
 **Account Requirements:**
 
 **Domain-Level Permissions:**
@@ -32,44 +24,9 @@ This document provides a comprehensive reference of permissions required for **D
 - Must be a **domain account**
 - Must be in the **Administrators** group on target machines
 
-**Configuration Method:**
-Use Group Policy to add discovery account to local Administrators group:
-- Navigate to: Computer Configuration > Preferences > Control Panel Settings
-- Configure: Local Users and Groups > Local Group > Administrators (Built-in)
-
-**Best Practice - Limit Login Privileges:**
-- Add discovery account to **Deny log on locally** policy
-- Add discovery account to **Deny log on through Remote Desktop Services** policy
-
-**Technologies Used:**
-- LDAP (for querying AD and OUs)
-- WMI (Windows Management Instrumentation) - for services
-- WMA (Microsoft Web Administration) - for IIS application pools
-- Windows Task Scheduler interfaces - for scheduled tasks
-
-**Known Limitations:**
-- **Windows Server 2016/2019:** Scheduled tasks not discovered unless Secret Server instance or distributed engine is on the same domain as target server
-  - Scheduled task discovery only retrieves SID, which must be translated to username on same domain
-
 ---
 
-### RPC (Remote Password Changing)
-
-**Overview:**
-The privileged Secret Server RPC service account requires granular Active Directory permissions configured using ADSI Edit and Active Directory Users and Computers.
-
-**ADSI Permissions (Password Settings Container):**
-
-**Location:** CN=System > CN=Password Settings Container
-
-**Required Permission:**
-- **Read** permission on Password Settings Container
-
-**Delegate Control Permissions:**
-
-**Applied To:** Organizational Unit (OU) or top-level domain where accounts reside
-
-**Configuration:** Custom task delegation for User objects only
+### Remote Password Changing (RPC)
 
 **Required Permissions:**
 - Change Password
@@ -80,32 +37,6 @@ The privileged Secret Server RPC service account requires granular Active Direct
 - Write pwdLastSet
 - Write UserAccountControl
 - Read UserAccountControl
-
-**Protected Group Accounts (Additional Configuration):**
-
-For accounts in protected groups (e.g., Domain Admins), use `dsacls` commands on domain controller:
-
-**Account Unlock Permissions:**
-```
-dsacls "dc=<domain>,dc=<tld>" /G "<domain>\<account>:RP;msDS-User-Account-Control-Computed;user" /I:S
-dsacls "dc=<domain>,dc=<tld>" /G "<domain>\<account>:RPWP;lockoutTime;user" /I:S
-dsacls "CN=AdminSDHolder,CN=System,DC=<domain>,DC=<tld>" /G "<domain>\<account>:RPWP;lockoutTime"
-```
-
-**Password Reset Permissions:**
-```
-dsacls "dc=<domain>,dc=<tld>" /G "<domain>\<account>:CA;Reset Password;user" /I:S
-dsacls "CN=AdminSDHolder,CN=System,DC=<domain>,DC=<tld>" /G "<domain>\<account>:CA;Reset Password"
-```
-
-**SDProp Process:**
-After configuring AdminSDHolder permissions, the Security Descriptor Propagator (SDProp) must propagate changes to protected admin groups. This can be initiated manually using `ldp.exe` with the `RunProtectAdminGroupsTask` attribute.
-
-**Tools Required:**
-- **ADSI Edit** - Active Directory Service Interfaces editor (found on Domain Controllers)
-- **Active Directory Users and Computers** - Standard AD management console
-- **dsacls** - Command-line tool for setting AD permissions (for protected groups)
-- **ldp.exe** - LDAP Data Interchange Format tool (for triggering SDProp)
 
 ---
 
